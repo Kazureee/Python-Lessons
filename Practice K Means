@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyMGOZIturxLzks6sCw2TTX2",
+      "authorship_tag": "ABX9TyP6IM/0nEAKKOQYV55g2ikO",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -28,13 +28,13 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 4,
+      "execution_count": 11,
       "metadata": {
         "id": "Jmga6S40GSdN",
-        "outputId": "c37694ae-ab30-446b-b3d5-fca792c60a36",
         "colab": {
           "base_uri": "https://localhost:8080/"
-        }
+        },
+        "outputId": "adaed398-09a5-4731-95a9-cc043fec67a7"
       },
       "outputs": [
         {
@@ -49,7 +49,8 @@
         "from google.colab import drive\n",
         "drive.mount('/content/drive')\n",
         "\n",
-        "import pandas as pd\n"
+        "import pandas as pd\n",
+        "from sklearn.preprocessing import StandardScaler"
       ]
     },
     {
@@ -59,12 +60,12 @@
         "df"
       ],
       "metadata": {
-        "id": "dU_DekxqJIIe",
-        "outputId": "f24f3986-c15b-453a-e56d-db8552e9f331",
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 424
-        }
+          "height": 441
+        },
+        "id": "dU_DekxqJIIe",
+        "outputId": "f24f3986-c15b-453a-e56d-db8552e9f331"
       },
       "execution_count": 5,
       "outputs": [
@@ -492,12 +493,12 @@
         "df"
       ],
       "metadata": {
-        "id": "Ca_omC8fJNHH",
-        "outputId": "98408666-f97b-40f9-a8e8-cca7284556e4",
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 424
-        }
+          "height": 441
+        },
+        "id": "Ca_omC8fJNHH",
+        "outputId": "98408666-f97b-40f9-a8e8-cca7284556e4"
       },
       "execution_count": 9,
       "outputs": [
@@ -919,11 +920,14 @@
     },
     {
       "cell_type": "code",
-      "source": [],
+      "source": [
+        "scaler = StandardScaler()\n",
+        "data_scaled = scaler.fit_transform(df[['Annual Income (k$)', 'Spending Score (1-100)']])"
+      ],
       "metadata": {
         "id": "oSwSv-ZJKNz9"
       },
-      "execution_count": null,
+      "execution_count": 14,
       "outputs": []
     }
   ]
